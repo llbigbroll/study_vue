@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>jQuery Sample</title>
+    </head>
+
+    <body>
+        <xmp>
+            jQueyry를 사용하여 "Hello, jQuery!!" 를 출력한다.
+        </xmp>
+        <hr>
+        <div id="app">
+            <p></p>
+            <button>click me</button>
+        </div>
+    </body>
+</html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> /* jQuery 플러그인 임포트 */</script>
+<script>
+    $('#app > button').click(function () {
+        $('#app > p').html('Hello, jQuery!!');
+    });
+</script>

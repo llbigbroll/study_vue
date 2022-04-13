@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vue Sample</title>
+    </head>
+
+    <body>
+        <xmp>
+            Vue를 사용하여 "Hello, Vue!!" 를 출력한다.
+        </xmp>
+        <hr>
+        <div id="app">
+            <p>{{message}}</p>
+            <button v-on:click="clickBtn">click me</button>
+        </div>
+    </body>
+</html>
+
+<script src="https://unpkg.com/vue@2.5.16/dist/vue.js">/* vue 플러그인 임포트 */</script>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            // 변수
+            message: "",
+        },
+        //template: ``,
+        methods: {
+            // 이벤트 핸들러
+            clickBtn: function() {
+                this.$data.message = "Hello, Vue!!"
+            }
+        },
+        components: {
+            /* 컴포넌트 등록. 예시) "태그명" : 컴포넌트명 */
+            
+        }, 
+        computed: {
+            
+        },
+        watch: {
+            
+        },
+        mounted: function() {
+            console.log("mounted");
+        },
+        updated: function() {
+            console.log("updated");
+        },
+    });
+    
+</script>
