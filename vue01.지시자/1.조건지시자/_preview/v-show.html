@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건지시자 v-show</title>
+
+    <style>
+        .container {
+            color: red;
+            font-weight: bold;
+            font-size: 20pt;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <h1 v-show="flag">Condition met</h1>
+        </div>
+        <div>
+            <h1 v-show="!flag">This is hidden</h1>
+            <h1 v-show="flag">This is shown</h1>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+<!-- vue 플러그인 임포트   -->
+<script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            flag: true,
+        },
+    });
+    
+</script>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건지시자 v-if 활용</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <style>
+        .container {
+            color: red;
+            font-weight: bold;
+            font-size: 20pt;
+        }
+
+        div {
+            padding-bottom: 3px;
+            border-bottom: 1px dashed blue;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h2>v-if/v-else-if/v-else 연습.
+        버튼 클릭 시 A-B-C-D 가 순차적으로 순환하도록 해보기
+    </h2>
+    <div id="app">
+        <button v-on:click="clickBind">클릭</button>
+        <span v-if="type === 1">
+            A
+        </span>
+        <span v-else-if="type === 2">
+            B
+        </span>
+        <span v-else-if="type === 3">
+            C
+        </span>
+        <span v-else>
+            D
+        </span>
+    </div>
+</body>
+
+</html>
+
+

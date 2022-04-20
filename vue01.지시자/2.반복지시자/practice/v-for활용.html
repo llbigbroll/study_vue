@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복지시자 활용</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <br>
+    <img src="./singerarray.png" style="padding-left: 30px;">
+    <xmp>
+        v-for 지시자를 사용하여 자신이 좋아하는 가수들을 출력하는 테이블을 작성하여 본다.
+
+        1. Object Array 를 만들어 화면과 같이 표시되게 하시오.
+
+        2. "추가" 버튼을 만들고 클릭 이벤트를 설정하시오.
+
+        3. "추가" 버튼을 클릭하면 행이 추가되게 작성하시오.
+
+        4. "추가" 버튼 기능 개선
+            input 태그 3개를 추가 하고
+            "추가" 버튼을 클릭하면
+            input 입력값을 이용하여 객체를 만들고
+            만들어진 객체를 Object Array에 추가한다.
+            <label for="">이름</label><input v-model:value="name">
+            <label for="">전화번호</label><input v-model:value="tel">
+            <label for="">주소</label><input v-model:value="address">
+    </xmp>
+    <hr>
+
+    <div id="app" class="col-md-10 offset-md-1">
+        <label for="">이름</label><input v-model:value="name">
+        <label for="">전화번호</label><input v-model:value="tel">
+        <label for="">주소</label><input v-model:value="address">
+        <table id="list" class="table-bordered">
+            <thead>
+                <tr class="bg-warning text-white text-center">
+                    <th>번호</th>
+                    <th>이름</th>
+                    <th>전화번호</th>
+                    <th>주소</th>
+                </tr>
+            </thead>
+            <tbody id="contacts">
+                <tr v-for="">
+                    <td><!--번호(인덱스 활용)--></td>
+                    <td><!--이름--></td>
+                    <td><!--전화번호--></td>
+                    <td><!--주소--></td>
+                </tr>
+            </tbody>
+        </table>
+        <button v-on:click="clickAdd">추가</button>
+    </div>
+</body>
+
+</html>
+
+<!-- vue 플러그인 임포트   -->
+<script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+<script>
+new Vue({
+    el: "#app",
+    data: {
+        name: null,
+        tel: null,
+        address: null,
+        contacts: [
+            {name:"홍길동", tel:"010-1234-1234", address:"서울시"},
+            {name:"강감찬", tel:"010-2345-6789", address:"경기도"},
+        ]
+    },
+    methods: {
+        clickAdd: function () {
+            var add = {
+                name: this.$data.name,
+                tel: this.$data.tel,
+                address: this.$data.address
+            };
+            this.$set(this.$data.contacts, this.$data.contacts.length, add);
+        }
+    },
+});
+
+</script>

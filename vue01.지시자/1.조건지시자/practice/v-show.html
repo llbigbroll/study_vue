@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건지시자 v-show 활용</title>
+
+    <style>
+        .container {
+            color: red;
+            font-weight: bold;
+            font-size: 20pt;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>v-show 연습. v-show를 활용해 버튼 클릭 시 This is shown 와 This is hidden 가 번갈아 가며 나오도록 해보기.</h2>
+    <div id="app">
+        <button v-on:click="clickBind">클릭</button>
+        <div>
+            <h1>This is shown</h1>
+            <h1>This is hidden</h1>
+        </div>
+    </div>
+</body>
+
+</html>
+

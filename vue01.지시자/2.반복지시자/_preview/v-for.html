@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복지시자</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- CSS import -->
+    <style lang="">
+        ul {
+            list-style-type: disc;
+        }
+
+        span {
+            font-size: 3em;
+            border: 1px dashed blue;
+            padding: 10px 20px;
+            margin: 5px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <xmp>
+        Vue.js v-for 지시자 에 대해서 학습한다.
+
+        단순 배열을 바인딩하는 방법 학습
+        array = [1,2,3,4,5];
+
+        Object Arrary를 바인딩하는 방법 학습.
+        Object Arrary 예시)
+        var objarray = [
+            { text: 'One', value: 'A' },
+            { text: 'Two', value: 'B' },
+            { text: 'Three', value: 'C' },
+        ];
+
+        <select name="" id="">
+            <option value="A"> One </option>
+            <option value="B"> Two </option>
+            <option value="C"> Three </option>
+        </select>
+    </xmp>
+    <hr>
+
+    <h2>Arrary 바인딩</h2>
+    <div id="app">
+        <p>
+            <ul>
+                <li v-for="system in systems">{{ system }}</li>
+            </ul>
+        </p>
+        <p>
+            <!--v-bind:key를 특별히 사용하지 않아도 각 node의 고유값을 지정하기 위해 vue에서 고유 key값 지정을 권장-->
+            <span v-for="(val, i) in arr" v-bind:key="i">{{val}}</span>
+        </p>
+    </div>
+    <hr>
+
+    <h2>Object Arrary 바인딩</h2>
+    <div id="app1">
+        <div>
+            <h2>Object Arrary rendered with v-for:</h2>
+            <p>
+                var objarray = [
+                    { text: 'One', value: 'A' },
+                    { text: 'Two', value: 'B' },
+                    { text: 'Three', value: 'C' },
+                ];
+            </p>
+            <select name="" id="">
+                <!--v-bind:key를 특별히 사용하지 않아도 각 node의 고유값을 지정하기 위해 vue에서 고유 key값 지정을 권장-->
+                <option v-for="(option,index) in options"
+                        v-bind:key="index"
+                        v-bind:value="option.value">
+                    {{ option.text }} : {{option.value}}
+                </option>
+            </select>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+
+<!-- vue 플러그인 임포트   -->
+<script src="https://unpkg.com/vue@2.5.16/dist/vue.js">/* vue 플러그인 임포트 */</script>
+<script>
+new Vue({
+    el: "#app",
+    data: {
+        systems : ["android", "ios", "windows"],
+        arr : [1,2,3,4],
+    },
+});
+
+new Vue({
+    el: "#app1",
+    data: {
+        options: [
+            { text: 'One', value: 'A' },
+            { text: 'Two', value: 'B' },
+            { text: 'Three', value: 'C' },
+        ],
+    },
+});
+</script>

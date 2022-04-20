@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건지시자 v-if</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <style>
+        .container {
+            color: red;
+            font-weight: bold;
+            font-size: 20pt;
+        }
+
+        div {
+            padding-bottom: 3px;
+            border-bottom: 1px dashed blue;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h2>
+        v-if 연습 1.
+        awesome 이 true인 경우
+    </h2>
+    <div id="app1">
+        <h3 v-if="awesome">Vue is awesome!</h3>
+        <h3 v-else>Oh no..</h3>
+    </div>
+
+    <h2>
+        v-else 연습 2.
+        awesome 이 false인 경우
+    </h2>
+    <div id="app2">
+        <h3 v-if="awesome">Vue is awesome!</h3>
+        <h3 v-else>Oh no..</h3>
+    </div>
+
+    <h2>
+        v-if/v-else 연습 3.
+        버튼을 클릭하여 awesome의 값을 반전
+    </h2>
+    <div id="app3">
+        <button v-on:click="clickBind">클릭</button>
+        <span v-if="awesome">
+            Now you see me
+        </span>
+        <span v-else>
+            Now you don't
+        </span>
+    </div>
+</body>
+
+</html>
+
+
+<!-- vue 플러그인 임포트   -->
+<script src="https://unpkg.com/vue@2.5.16/dist/vue.js">/* vue 플러그인 임포트 */</script>
+<script>
+new Vue({
+    el: "#app1",
+    data: {
+        awesome: true,
+    },
+});
+
+new Vue({
+    el: "#app2",
+    data: {
+        awesome: false,
+    },
+});
+
+new Vue({
+    el: "#app3",
+    data: {
+        awesome: true,
+    },
+    methods: {
+        clickBind: function() {
+            this.$data.awesome = !this.$data.awesome;
+        }
+    },
+});
+</script>
