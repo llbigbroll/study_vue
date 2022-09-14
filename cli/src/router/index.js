@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
 import DateView from '../views/DateView.vue'
+import AddressView from '../views/AddressView.vue'
 
 const routes = [
   {
@@ -22,6 +23,11 @@ const routes = [
     path: '/date',
     name: 'date',
     component: DateView
+  },
+  {
+    path: '/address',
+    name: 'address',
+    component: AddressView
   }
 ]
 
