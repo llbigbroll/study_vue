@@ -1,7 +1,7 @@
 <template>
   <div class="address">
     <h1>Address</h1>
-    <input class="inputAddress" v-model="searchItem" placeholder="지번 또는 도로명 주소를 입력하시오." />
+    <input type="text" class="inputAddress" v-model="searchItem" placeholder="지번 또는 도로명 주소를 입력하시오." />
     <button v-on:click="getAddress">search</button>
     <div class="areaAddress">{{this.addressJson}}</div>
   </div>
